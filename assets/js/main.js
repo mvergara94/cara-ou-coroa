@@ -1,5 +1,6 @@
 const sectionBoardGame = document.getElementById('boardGame');
 const botao = document.getElementById('jogar');
+const resultado = document.getElementById('resultado');
 
 function obtemLadoMoeda() {
   const numeroRandom = Math.random();
@@ -13,6 +14,19 @@ function giraMoeda() {
   requestAnimationFrame(() =>
     sectionBoardGame.classList.add(`animate-${ladoMoeda}`)
   );
+
+  zeraResultado();
+  setTimeout(() => {
+    geraResultado(ladoMoeda);
+  }, 3000);
+}
+
+function geraResultado(lado) {
+  resultado.innerHTML = `Deu ${lado}!`;
+}
+
+function zeraResultado() {
+  resultado.innerHTML = '';
 }
 
 botao.onclick = giraMoeda;

@@ -67,6 +67,12 @@ button:active {
   background: red;
 }
 
+.resultado {
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 0px #041833;
+}
+
 #boardGame {
   position: relative;
   width: 8rem;
