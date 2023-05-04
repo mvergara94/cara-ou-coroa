@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+:root {
+  --primary-color: #fff;
+  --font: 'Press Start 2P', cursive;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    0deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 9, 121, 1) 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  font-family: var(--font);
+  color: var(--primary-color);
+  display: grid;
+  place-items: center;
+  font-size: 16px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.container h1 {
+  font-size: 2.5rem;
+  max-width: 300px;
+  text-align: center;
+  line-height: 4rem;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 0px #041833;
+}
+
+.container button {
+  border: none;
+  background: #1875e8;
+  font-family: 'Press Start 2P', cursive;
+  color: white;
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  filter: drop-shadow(2px 2px 0px #000000);
+  box-shadow: inset 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+  transition: 0.1s ease-in-out;
+}
+
+button:hover {
+  transform: translateY(2px);
+  box-shadow: inset 0px 10px 20px 2px rgba(0, 0, 0, 0.25);
+}
+
+button:active {
+  transform: translateY(2px);
+  box-shadow: inset 0px 10px 20px 2px rgba(0, 0, 0, 0.25);
+  background: red;
+}
+
+#boardGame {
+  position: relative;
+  width: 8rem;
+  height: 8rem;
+  margin: 2rem 0rem;
+  transform-style: preserve-3d;
+}
+
+#boardGame div {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  backface-visibility: hidden;
+  background-size: contain;
+  position: absolute;
+}
+
+#cara {
+  background-image: url('../img/png-transparent-super-mario-land-2-6-golden-coins-new-super-mario-bros-super-mario-bros-2-nintendo-a-nintendo-gold-coin-nintendo-video-game-thumbnail.png');
+}
+
+#coroa {
+  background-image: url('../img/png-transparent-super-mario-land-2-6-golden-coins-mario-bros-mario-yoshi-new-super-mario-bros-mario-bros.png');
+  transform: rotateY(-180deg);
+  background-position: center;
+}
+
+.animate-cara {
+  animation: girarCara 3s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes girarCara {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(1800deg);
+  }
+}
+
+.animate-coroa {
+  animation: girarCoroa 3s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes girarCoroa {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(1620deg);
+  }
+}
